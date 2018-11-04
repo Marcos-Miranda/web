@@ -187,7 +187,7 @@
 			left: 20%}
 		.propaganda1{background-size: cover;
 			background-position: -230px;
-			background-image: url("img1.jpg");
+			background-image: url("/images/img1.jpg");
 			position: relative ;
 			height: 500px}
 		.txt1prop1{position:absolute; 
@@ -224,7 +224,7 @@
 			width: 43%; 
 			left: 5%; 
 			top: 560px;
-			background-image: url(img2.jpg)}
+			background-image: url("/images/img2.jpg")}
 		.propaganda2:hover{cursor:pointer}
 		.propaganda3{margin-left: 50%; 
 			position: absolute ;
@@ -234,7 +234,7 @@
 			width: 43%; 
 			left: 4%; 
 			top: 560px;
-			background-image: url(img3.jpg)}
+			background-image: url("/images/img3.jpg")}
 		.propaganda3:hover{cursor:pointer}
 		.textbot1{font-size: 14px; 
 			font-weight: 400; 
@@ -324,7 +324,7 @@
 			position: static;}
 		.propaganda1{background-size: cover;
 			background-position: -230px;
-			background-image: url("img1.jpg");
+			background-image: url("/images/img1.jpg");
 			position: static;
 			height: 550px;
 			width: 100%}
@@ -353,7 +353,7 @@
 			height: 360px;
 			background-position: center; 
 			width: 100%;
-			background-image: url(img2.jpg); margin-top: 30px;}
+			background-image: url("/images/img2.jpg"); margin-top: 30px;}
 		.propaganda2:hover{cursor:pointer}
 		.propaganda3{ margin-top: 30px;
 			position:static ;
@@ -361,7 +361,7 @@
 			background-size: cover; 
 			background-position: 880px; 
 			width: 100%;
-			background-image: url(img3.jpg);}
+			background-image: url("/images/img3.jpg");}
 		.propaganda3:hover{cursor:pointer}
 		.textbot1{font-size: 14px; 
 			font-weight: 400; 
