@@ -10,5 +10,16 @@
 </head>
 <body>
     <h1>Publicação de conteúdo</h1>
+    <form action="/publish" method="POST" enctype="multipart/form-data">
+        <label for="titulo">Título da propraganda:</label>
+        <input name="titulo" id="titulo" type="text"><br>
+        <label for="descricao">Descrição da propaganda:</label>
+        <input name="descricao" id="descricao" type="text">
+        <p>Imagem principal:</p>
+        <input type="file" name="imageP"><br>
+        <p>Imagem secundária</p>
+        <input type="file" name="imageS"><br>
+        <input type="submit">
+    </form>
 </body>
 </html>
