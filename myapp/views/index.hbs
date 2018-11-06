@@ -16,7 +16,10 @@
 	<div class="menu1">
 		<div class="menupt1">
 			<img class="logoorigin" src="images/logoorigin.jpg" alt="Logo da Origin"></img>
-			<img class="busca" src="images/busca.jpg" alt="Campo de busca do site"></img>
+			<form class="busca" action="/busca" method="POST">
+				<input id="busca" name="busca" type="text">
+				<input type="submit" value="Buscar">
+			</form>
 			<div class="menuext1"><span class="oracces">Origin Access</span><span class="itemmenu1">></span></div>
 			<div class="menuext2"><span class="barrala"></span><span class="loja">Loja</span></div>
 			<div class="menuin1"><span class="textmenuin">Explorar jogos</span><span class="itemmenu2">></span></div>
@@ -54,7 +57,7 @@
 					</div>
 				</div>	
 			</div>
-			<div class="propaganda3">
+			<div class="propaganda2">
 				<div class="aretxtprop2">
 					<div class="imgprop2">
 						<img class="imagem" src="images/img3.2.jpg"></img>
@@ -66,7 +69,7 @@
 				</div>
 			</div>
 			{{#each propaganda}}
-			<div class="propaganda3">
+			<div class="propaganda2">
 				<div class="aretxtprop2">
 					<div class="imgprop2">
 						<img class="imagem" src="images/{{titulo}}S.jpg"></img>

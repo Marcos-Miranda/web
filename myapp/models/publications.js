@@ -25,5 +25,13 @@ module.exports = class publiDAO {
             }).catch((err) => {throw err; });
     }
 
+    static findBySearch(keyWord){
+        return client.connect('mongodb://localhost:27017/test',
+            {useNewUrlParser: true}).then((client) => {
+                let db = client.db('test');
+                return db.collection('publications').find({'titulo': { "$regex": keyWord, "$options": "i" }}).toArray();
+            }).catch((err) => {throw err; });
+    }
+
  
 };

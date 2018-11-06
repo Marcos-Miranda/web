@@ -218,11 +218,12 @@
 			top: 5%;
 			top:80px; }
 		.propaganda2{float: left;
-			position: absolute; 
+			position: static; 
 			height: 360px;	
 			background-position: center; 
-			width: 43%; 
-			left: 5%; 
+			width: 45%; 
+			left: 10px;
+			margin: 5px; 
 			top: 560px;
 			background-image: url("/images/img2.jpg")}
 		.propaganda2:hover{cursor:pointer}
