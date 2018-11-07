@@ -1,4 +1,16 @@
 @media (min-width: 1080px){
+		a{
+			color: white;
+			text-decoration: none
+		}
+		.logout{
+			position: fixed;
+			top: 130px
+		}
+		.logoutlink{
+			color: blue;
+			text-decoration: underline
+		}
 		body{margin: 0; 
 			height: 100%}
 		.menuoculto{height: 100px; 
@@ -14,7 +26,7 @@
 			z-index: 1}
 		.menu2{background-color: rgb(30,38,40); 
 			width: 20%; 
-			height: 185px; 
+			height: 280px; 
 			min-width: 270px; 
 			position: fixed; 
 			z-index: 1; 
@@ -134,6 +146,16 @@
 			height: 44px; 
 			position: fixed; 
 			bottom: 60px; 
+			left: 16px; 
+			min-width: 238px; 
+			border-radius: 5px; 
+			border-color: white; 
+			border-style: solid; 
+			border-width: 1px}
+		.botao4{width: 16%; 
+			height: 44px; 
+			position: fixed; 
+			bottom: 180px; 
 			left: 16px; 
 			min-width: 238px; 
 			border-radius: 5px; 

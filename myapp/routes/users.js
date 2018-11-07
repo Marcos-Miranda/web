@@ -11,11 +11,19 @@ router.get('/register', function(req, res, next){
   res.render('register');
 });
 
+router.get('/logout', function(req, res, next){
+  if(req.cookies && req.cookies.login){
+    res.clearCookie('login');
+  }
+  res.redirect('/');
+});
+
 router.post('/register', function(req, res, next){
   var login = req.body.login;
   var senha = req.body.senha;
   var email = req.body.email;
-  if(!login || !senha || !email){
+  var endereco = req.body.endereco;
+  if(!login || !senha || !email || !endereco){
     res.send('Todos os campos devem ser preenchidos')
     res.end();
     return;
@@ -36,7 +44,7 @@ router.post('/register', function(req, res, next){
       }
     }).then((v)=>{
       if(v===1){
-        userDAO.insert(login, senha, email);
+        userDAO.insert(login, senha, email, endereco);
         res.redirect('/users/register');
       }
     });

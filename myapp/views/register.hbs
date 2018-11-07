@@ -9,6 +9,7 @@
     <script src="main.js"></script>
 </head>
 <body>
+    <h1>Cadastro</h1>
     <form action="/users/register" method="POST">
         <p>
             <label for="login">Login:</label>
@@ -21,9 +22,14 @@
         <p>
             <label for="email">E-mail:</label>
             <input name="email" id="email" type="text">
-        </p>    
-        <input type="submit" value="Cadastrar">
-    
+        </p>
+        <p>
+            <label for="endereco">Endereço:</label>
+            <input name="endereco" id="endereco" type="text">
+        </p>      
+        <input type="submit" value="Cadastrar">   
     </form>
+    <br><br>
+    <a href="/">Voltar para página inicial</a>
 </body>
 </html>

@@ -9,11 +9,11 @@ module.exports = class UserDAO {
             }).catch((err) => {throw err; });
     }
 
-    static insert(login, senha, email) {
+    static insert(login, senha, email, endereco) {
         return client.connect('mongodb://localhost:27017/test',
             {useNewUrlParser: true}).then((client) => {
                 let db = client.db('test');
-                db.collection('users').insertOne({'login':login, 'senha':senha, 'email':email });
+                db.collection('users').insertOne({'login':login, 'senha':senha, 'email':email, 'endereco':endereco});
             }).catch((err) => {throw err; });
     }
 
