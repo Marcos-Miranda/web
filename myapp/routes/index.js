@@ -21,7 +21,9 @@ router.get('/publish', function(req, res, next){
 
 router.post('/busca', function(req, res, next){
   var keyWord = req.body.busca;
-  console.log(keyWord);
+  if(!keyWord){
+    res.redirect('/');
+  }
   publiDAO.findBySearch(keyWord).then((publis) =>{
     res.render('index', {propaganda: publis});
   });
@@ -29,8 +31,14 @@ router.post('/busca', function(req, res, next){
 });
 
 router.post('/publish', function(req, res, next){
-  var login = req.cookies.login;
   var form = formidable.IncomingForm();
+
+  if(!req.cookies && !req.cookies.login){
+    res.send('ah malandro');
+    res.redirect('users/login');
+  }
+  var login = req.cookies.login;
+
   form.parse(req, function(err, fields, files){
     var titulo = fields.titulo;
     var descricao = fields.descricao;

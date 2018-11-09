@@ -242,12 +242,13 @@
 		.propaganda2{float: left;
 			position: static; 
 			height: 360px;	
-			background-position: center; 
-			width: 45%; 
-			left: 10px;
-			margin: 5px; 
+			background-position: center;
+			background-size: 100% 100%; 
+			width: 40%; 
+			left: 5%;
+			margin: 5%; 
 			top: 560px;
-			background-image: url("/images/img2.jpg")}
+		}
 		.propaganda2:hover{cursor:pointer}
 		.propaganda3{margin-left: 50%; 
 			position: absolute ;
@@ -349,19 +350,19 @@
 			background-position: -230px;
 			background-image: url("/images/img1.jpg");
 			position: static;
-			height: 550px;
+			height: 650px;
 			width: 100%}
 		.txt1prop1{position:static;
 			text-align: center;
-			width:40%, 
-			margin-left: 35%}
+			width:40%; 
+			margin-left	: 35%}
 		.txt2prop1{position:static;
 			text-align: center;
 			width:70%; 
 			margin-left: 15%;
 			margin-top: 20%}
 		.texto1propaganda1{line-height: 50px;
-			font-size: 40px;
+			font-size: 38px;
 			font-weight: 800; 
 			color: white;
 			font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif}
@@ -376,7 +377,7 @@
 			height: 360px;
 			background-position: center; 
 			width: 100%;
-			background-image: url("/images/img2.jpg"); margin-top: 30px;}
+		}	
 		.propaganda2:hover{cursor:pointer}
 		.propaganda3{ margin-top: 30px;
 			position:static ;
