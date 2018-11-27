@@ -6,6 +6,7 @@
 	@import url("stylesheets/PJ1web.css");
 	</style>
 	<title>Origin</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
 	<div class="menuoculto">
@@ -46,6 +47,7 @@
 					<div class ="txt2prop1"><span class="texto2propaganda1">Economize até 85% em títulos íncríveis até 14h BRT do dia 28 de agosto</span></div>
 					<div class="botao3"><span class="textbot1"><b><center>Ver as ofertas</center></b></span> </div>
 			</div>
+			<div id="props">
 			{{#each propaganda}}
 			<div class="propaganda2" style="background-image: url('images/{{titulo}}P.jpg')">
 				<div class="aretxtprop2">
@@ -59,6 +61,12 @@
 				</div>
 			</div>
 			{{/each}}
-		</div>
+			</div>
+	</div>
+	<script type="text/javascript" charset="utf-8">
+		setInterval(function(){
+			$("#props").load("/ #props");
+		}, 5000);
+	</script>
 </body>
 </html>

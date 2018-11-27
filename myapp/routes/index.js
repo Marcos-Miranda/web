@@ -3,11 +3,12 @@ var router = express.Router();
 var formidable = require('formidable');
 var fs = require('fs');
 var publiDAO = require('../models/publications')
+var hb = require('express-handlebars').create();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   publiDAO.find().then((publis) =>{
-    res.render('index', {propaganda: publis});
+    res.render("index", {propaganda: publis});
   });
 });
 
@@ -31,12 +32,14 @@ router.post('/busca', function(req, res, next){
 });
 
 router.post('/publish', function(req, res, next){
-  var form = formidable.IncomingForm();
-
+  
   if(!req.cookies && !req.cookies.login){
     res.send('ah malandro');
     res.redirect('users/login');
+    return;
   }
+
+  var form = formidable.IncomingForm();
   var login = req.cookies.login;
 
   form.parse(req, function(err, fields, files){
