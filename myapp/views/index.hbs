@@ -7,6 +7,8 @@
 	</style>
 	<title>Origin</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+  	<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
 	<div class="menuoculto">
@@ -16,12 +18,12 @@
 	</div>
 	<div class="menu1">
 		<div class="menupt1">
-			<img class="logoorigin" src="images/logoorigin.jpg" alt="Logo da Origin"></img>
-			<form class="busca" action="/busca" method="POST">
-				<input id="busca" name="busca" type="text">
-				<input type="submit" value="Buscar">
-			</form>
-			<div class="logout"><a class="logoutlink" href="/users/logout">Log Out</a></div>
+			<img class="logoorigin" src="images/logoorigin.jpg" alt="Logo da Origin"></img>		
+			<div class="busca">
+				<span>Busca:</span>
+				<input id="buscain" name="busca" type="text">
+			</div>
+			<div class="logout"><a class="logoutlink" href="">Log Out</a></div>
 			<div class="menuext1"><span class="oracces">Origin Access</span><span class="itemmenu1">></span></div>
 			<div class="menuext2"><span class="barrala"></span><span class="loja">Loja</span></div>
 			<div class="menuin1"><span class="textmenuin">Explorar jogos</span><span class="itemmenu2">></span></div>
@@ -30,6 +32,9 @@
 		</div>
 		<div class="ophori">
 			<p><span class="textmenuhor">Sobre</span><span class="ponto"> . </span><span class="textmenuhor">Baixar</span><span class="ponto"> . </span><span class="textmenuhor">Ajuda</span></p>
+		</div>
+		<div class="progr">
+			<span class="progre">Progresso: </span><span class="progress" id="progress">A iniciar...</span>
 		</div>
 	</div>
 	<div class="menu2">
@@ -64,9 +69,43 @@
 			</div>
 	</div>
 	<script type="text/javascript" charset="utf-8">
+
+		var progress = document.getElementById("progress");
+		
 		setInterval(function(){
-			$("#props").load("/ #props");
-		}, 5000);
+			progress.innerHTML = 'Em andamento...';
+			var text = $("#buscain").val();
+			$.ajax({
+				type: "GET",
+				url: "/busca",
+				data: {busca: text},
+				success: function(data){
+					$('#props').replaceWith($('#props',data));
+				},
+				complete: function(){
+					progress.innerHTML = 'Finalizado';
+				}				
+			});
+		}, 2000);
+
+		$("#buscain").autocomplete({
+			source: function(request, response){
+				$.get("/titles", function(data){
+					var results = $.ui.autocomplete.filter(data, request.term);
+        			response(results.slice(0, 10));
+				}, "json");
+			}
+		});
+
+		$(".logoutlink").on('click', function(){
+			$.ajax({
+				type: "GET",
+				url: "/users/logout",
+				success: function(data){
+					alert(data);
+				}
+			});
+		});
 	</script>
 </body>
 </html>

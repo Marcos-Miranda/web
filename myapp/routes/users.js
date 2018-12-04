@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var userDAO = require('../models/users')
+var userDAO = require('../models/users');
 
 /* GET users listing. */
 router.get('/login', function(req, res, next) {
@@ -14,8 +14,10 @@ router.get('/register', function(req, res, next){
 router.get('/logout', function(req, res, next){
   if(req.cookies && req.cookies.login){
     res.clearCookie('login');
+    res.send('Logout realizado!');
+    return;
   }
-  res.redirect('/');
+  res.send('Você não está logado!');
 });
 
 router.post('/register', function(req, res, next){

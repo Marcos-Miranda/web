@@ -20,10 +20,27 @@ router.get('/publish', function(req, res, next){
   }
 });
 
-router.post('/busca', function(req, res, next){
-  var keyWord = req.body.busca;
+router.get('/titles', function(req, res, next){
+  var titulos = []
+  publiDAO.find().then((publis) =>{
+    for(i in publis){
+      titulos.push(publis[i].titulo);
+    }
+    res.contentType('application/json');
+    res.send(JSON.stringify(titulos)); 
+  });
+});
+
+router.get('/busca', function(req, res, next){
+  //var dados = JSON.parse(req.body);
+  
+  var keyWord = req.query.busca;
+  console.log(keyWord);
+  
   if(!keyWord){
-    res.redirect('/');
+    publiDAO.find().then((publis) =>{
+      res.render('index', {propaganda: publis});
+    });
   }
   publiDAO.findBySearch(keyWord).then((publis) =>{
     res.render('index', {propaganda: publis});

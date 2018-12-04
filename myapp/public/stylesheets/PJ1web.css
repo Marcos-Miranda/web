@@ -7,6 +7,9 @@
 			position: fixed;
 			top: 130px
 		}
+		.progr{
+			color: white
+		}
 		.logoutlink{
 			color: blue;
 			text-decoration: underline
@@ -35,7 +38,7 @@
 			left: 80px; 
 			top: 30px;}
 		.busca{position: fixed; 
-			left: 5px; 
+			color: white;
 			top: 90px;}
 		.menuext1{position: fixed; 
 			height: 48px; 
