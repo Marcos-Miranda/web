@@ -6,6 +6,7 @@ var publiDAO = require('../models/publications')
 var hb = require('express-handlebars').create();
 
 /* GET home page. */
+/*Batata*/
 router.get('/', function(req, res, next) {
   publiDAO.find().then((publis) =>{
     res.render("index", {propaganda: publis});
