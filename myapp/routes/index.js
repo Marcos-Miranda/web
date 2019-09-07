@@ -7,6 +7,7 @@ var hb = require('express-handlebars').create();
 
 /* GET home page. */
 /*Batata*/
+/*batata2*/
 router.get('/', function(req, res, next) {
   publiDAO.find().then((publis) =>{
     res.render("index", {propaganda: publis});
